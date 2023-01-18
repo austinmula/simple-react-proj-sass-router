@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-function Button({ src, text }) {
+function Button({ src, id, text }) {
   return (
-    <Link style={buttonStyle} to={src}>
+    <Link style={buttonStyle} to={src} state={{ id: id }}>
       {text}
     </Link>
   );

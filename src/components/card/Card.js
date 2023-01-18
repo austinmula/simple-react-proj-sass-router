@@ -8,7 +8,11 @@ function Card({ item }) {
       <CardHeader title={item.title} />
       <CardBody body={item.body} tags={item.tags} reactions={item.reactions} />
       <div className="card-footer">
-        <Button src={"/"} text={"Read More"} />
+        <Button
+          src={`post/${item.title.replace(/\s/g, "-")}`}
+          text={"Read More"}
+          id={item.id}
+        />
       </div>
     </div>
   );
