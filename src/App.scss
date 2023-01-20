@@ -46,6 +46,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1rem;
+    margin: 2em 0;
 
     .card {
       -webkit-box-shadow: -5px -1px 15px -10px rgba(46, 41, 46, 1);
@@ -101,4 +102,10 @@ nav {
       }
     }
   }
+}
+.page-num {
+  margin-top: 1em;
+  padding: 5px;
+  border: 1px solid #f3f3f3;
+  cursor: pointer;
 }

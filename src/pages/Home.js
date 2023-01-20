@@ -1,32 +1,35 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
 
 import Card from "../components/card/Card";
+import { usePagination } from "../hooks/usePagination";
 
 function Home() {
-  useEffect(() => {
-    fetch(" https://dummyjson.com/posts")
-      .then((res) => res.json())
-      .then((json) => {
-        setData(json.posts);
-      });
-  }, []);
-  const [data, setData] = useState([]);
+  const { posts, pagenumbers, changePage } = usePagination();
   return (
     <>
       <Navigation />
       <div className="content">
         <div className="card-grid">
-          {data.length === 0 ? (
+          {posts?.length === 0 ? (
             <p>Still Fetching</p>
           ) : (
             <>
-              {data.map((item) => (
+              {posts?.map((item) => (
                 <Card key={item.id} item={item} />
               ))}
             </>
           )}
         </div>
+        {pagenumbers.map((item) => (
+          <span
+            className="page-num"
+            key={item}
+            onClick={() => changePage(item)}
+          >
+            {item}
+          </span>
+        ))}
       </div>
     </>
   );
