@@ -7,12 +7,12 @@ const Single = () => {
   const params = useParams();
   let navigate = useNavigate();
 
-  useLayoutEffect(() => {
-    window.addEventListener("resize");
-    return () => {
-      window.removeEventListener("resize");
-    };
-  }, []);
+  // useLayoutEffect(() => {
+  //   window.addEventListener("resize", false);
+  //   return () => {
+  //     window.removeEventListener("resize", false);
+  //   };
+  // }, []);
 
   const id = location.state?.id;
   useEffect(() => {

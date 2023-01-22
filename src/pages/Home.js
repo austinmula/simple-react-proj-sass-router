@@ -7,10 +7,10 @@ import { usePagination } from "../hooks/usePagination";
 function Home() {
   const { posts, pagenumbers, changePage } = usePagination();
   return (
-    <>
-      <Navigation />
-      <div className="content">
-        <div className="card-grid">
+    <div className="light">
+      <div className="background">
+        {/* <Navigation /> */}
+        <div className="card-container">
           {posts?.length === 0 ? (
             <p>Still Fetching</p>
           ) : (
@@ -21,9 +21,10 @@ function Home() {
             </>
           )}
         </div>
+
         {pagenumbers.map((item) => (
           <span
-            className="page-num"
+            className="page-num text"
             key={item}
             onClick={() => changePage(item)}
           >
@@ -31,7 +32,7 @@ function Home() {
           </span>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 

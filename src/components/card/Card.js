@@ -21,14 +21,14 @@ function Card({ item }) {
 const CardBody = ({ body, tags, reactions }) => {
   return (
     <div className="body-section">
-      <p>{body}</p>
+      <p className="text">{body}</p>
 
       <div className="sub-section">
         <div className="reactions">
           <BiStar style={{ color: "red" }} />
           <span style={{ color: "teal" }}>{reactions}</span>
         </div>
-        <div className="tags">
+        <div className="tags text">
           {tags.map((item, index) => (
             <small key={index}>{item} | </small>
           ))}
