@@ -30,7 +30,15 @@
   .text {
     color: $light-100;
   }
+  .btn {
+    background-color: $light-100;
+    color: $dark-500;
+  }
   .background {
+    background-color: $dark-700;
+    min-height: 100vh;
+  }
+  body {
     background-color: $dark-700;
   }
   .card-container {

@@ -3,13 +3,20 @@ import Navigation from "../components/Navigation";
 
 import Card from "../components/card/Card";
 import { usePagination } from "../hooks/usePagination";
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 function Home() {
   const { posts, pagenumbers, changePage } = usePagination();
+  const { theme, setTheme } = useContext(ThemeContext);
   return (
-    <div className="light">
+    <div className={theme}>
       <div className="background">
+        <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+          toggle
+        </button>
         {/* <Navigation /> */}
+
         <div className="card-container">
           {posts?.length === 0 ? (
             <p>Still Fetching</p>
