@@ -5,6 +5,7 @@ import Card from "../components/card/Card";
 import { usePagination } from "../hooks/usePagination";
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
+import { Link } from "react-router-dom";
 
 function Home() {
   const { posts, pagenumbers, changePage } = usePagination();
@@ -15,6 +16,7 @@ function Home() {
         <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
           toggle
         </button>
+        <Link to="/login">login</Link>
         {/* <Navigation /> */}
 
         <div className="card-container">

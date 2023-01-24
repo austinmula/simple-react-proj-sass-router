@@ -1,9 +1,9 @@
-import { LOGIN_SUCCESS, LOGIN_FAIL, SET_MESSAGE } from "./types";
+import { LOGIN_SUCCESS, LOGIN_FAIL, SET_MESSAGE } from "./type";
 
 import AuthService from "../services/auth.service";
 
-export const login = (username, password) => (dispatch) => {
-  return AuthService.login(username, password).then(
+export const login = (email, password) => (dispatch) => {
+  return AuthService.login(email, password).then(
     (data) => {
       dispatch({
         type: LOGIN_SUCCESS,

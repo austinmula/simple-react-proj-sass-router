@@ -1,14 +1,14 @@
 import axios from "axios";
 const API_URL = "http://localhost:4001/auth/login/";
 
-const login = (username, password) => {
+const login = (user) => {
   return axios
     .post(API_URL, {
-      username,
-      password,
+      email: user.email,
+      password: user.password,
     })
     .then((response) => {
-      if (response.data.accessToken) {
+      if (response.data.token) {
         localStorage.setItem("user", JSON.stringify(response.data));
       }
 
